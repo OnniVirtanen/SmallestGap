@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 class SmallestGapTest {
@@ -59,5 +60,23 @@ class SmallestGapTest {
 
         // Assert
         assertEquals(expected, actual);
+    }
+
+    @Test
+    void findSmallestGap_oneElement_throws() {
+        // Arrange
+        final List<Integer> integers = Collections.singletonList(1);
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class, () -> SmallestGap.findSmallestGap(integers));
+    }
+
+    @Test
+    void findSmallestGap_emptyList_throws() {
+        // Arrange
+        final List<Integer> integers = Collections.emptyList();
+
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class, () -> SmallestGap.findSmallestGap(integers));
     }
 }
