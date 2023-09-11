@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 public class SmallestGap {
-    public static Integer findSmallestGap(final List<Integer> integers) {
+    public static Integer findSmallestGap(List<Integer> integers) {
         validateList(integers);
         List<Integer> sortedList = sortListAndRemoveDuplicates(integers);
         return findSmallestGapFromSortedArray(sortedList);
@@ -25,7 +25,7 @@ public class SmallestGap {
         }
     }
 
-    private static Integer findSmallestGapFromSortedArray(final List<Integer> integers) {
+    private static Integer findSmallestGapFromSortedArray(List<Integer> integers) {
         int smallestNumberGap = Integer.MAX_VALUE;
         for (int i = 1; i < integers.size(); i++) {
             int currentInterval = integers.get(i) - integers.get(i-1) - 1;
