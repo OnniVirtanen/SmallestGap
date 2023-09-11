@@ -22,7 +22,7 @@ public class SmallestGap {
 
     private static void validateList(List<Integer> integers) {
         if (integers.isEmpty() || integers.size() == 1) {
-            throw new IllegalArgumentException("Cannot find gap between elements when there are not more than 1");
+            throw new IllegalArgumentException("A list with minimum of two elements should be provided.");
         }
     }
 
